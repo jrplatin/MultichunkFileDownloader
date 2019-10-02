@@ -1,6 +1,7 @@
 README for scan_downloader.py
 
 ##Background and Overview##
+
 This is a simple Python package that implements a concurrent, chunk-based file downloader. 
 Effectively, scan_downloader works by first using the HTTP GET request to elicit the proper
 response.  If the response can be broken down into valid chunks, we proceed in this manner;
@@ -13,6 +14,7 @@ and voilà, our file is downloaded!
 
 
 ##Required external libraries##
+
 Please ensure your system has access (via Pip) to the following packages:
 
 requests
@@ -26,6 +28,7 @@ os
 queue
 
 ##Usage##
+
 Proper usage from the command line is as follows:
 
 py scan_downloader.py <URL> -c nThreads
@@ -35,6 +38,7 @@ chunks of the URL to the local system.
 
 
 ##Some Closing Comments##
+
 Overall, I am extremely happy with the performance of my code.  The approach of breaking the HTTP response down into
 managable chunks and then concurrently downloading those chunks is much faster than a simple full download of a the file.
 In terms of my design choices, I appreciated my use of the job_queue in order to organize the thread pool.  Moreover,
@@ -51,5 +55,6 @@ this program scales incredibly well, but since the number of threads is a user p
 concurrency (and thus scale of the program) is dependant on the user.  Therefore, moving forward, we might 
 consult research in computer science to automatically optimize the number of threads.  
 
-##Testing
+##Testing##
+
 Please run scan_downloader_test.py to see some (successful) preliminary tests
